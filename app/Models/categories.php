@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+
+class categories extends Model
+{
+    use HasFactory;
+    protected $fillable = ['name', 'sethome'];
+    public function scopeShowCata($query)
+    {
+        return $query->orderBy('name', 'asc')->get();
+    }
+    
+}
